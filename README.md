@@ -19,12 +19,12 @@ Full brief: [docs/client-brief.md](docs/client-brief.md)
 | Retrieval          | Supabase `pgvector` + Postgres full-text search      |
 | Auth               | Supabase Auth (email only)                           |
 | Hosting            | Railway                                              |
-| LLM + embeddings   | OpenAI                                               |
+| LLM + embeddings   | Gemini (chat) + Ollama (embeddings)                  |
 
 ## Repo layout
 
 ```text
-document-copilot/
+themis/
 ├── AGENTS.md           # agent instructions (read first)
 ├── README.md           # this file
 ├── data/               # local corpus + download script (payloads gitignored)
@@ -45,7 +45,7 @@ Install these before setting up `backend/` or `frontend/`:
 | [Node.js](https://nodejs.org/) | 20+ (LTS) | Frontend toolchain | nodejs.org or `nvm install --lts` |
 | [pnpm](https://pnpm.io/installation) | latest | Frontend package manager | `corepack enable && corepack prepare pnpm@latest --activate` |
 
-You also need accounts/keys for external services once the app is wired up. Start with [docs/guides/supabase-setup.md](docs/guides/supabase-setup.md) (account + project), then create an [OpenAI API key](https://platform.openai.com/api-keys) when the LLM layer is wired up.
+You also need accounts/keys for external services once the app is wired up. Start with [docs/guides/supabase-setup.md](docs/guides/supabase-setup.md) (account + project), then get a free [Gemini API key](https://aistudio.google.com/apikey) when the LLM layer is wired up.
 
 ## Running locally
 
@@ -64,7 +64,7 @@ Fill these values in `backend/.env`:
 - `SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `DATABASE_URL` using the direct Supabase Postgres connection, not the transaction pooler
-- `OPENAI_API_KEY`
+- `GEMINI_API_KEY`
 - `ALLOWED_ORIGINS=http://localhost:5173`
 
 Frontend env:
