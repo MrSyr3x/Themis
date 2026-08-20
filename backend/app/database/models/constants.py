@@ -1,2 +1,2 @@
-# Must match `ollama_embedding_dimensions` in config and the Alembic migration.
+# Must match the embedding model output dimensions (Gemini text-embedding-004).
 EMBEDDING_DIMENSIONS = 768

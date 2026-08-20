@@ -18,10 +18,6 @@ class Settings(BaseSettings):
     supabase_service_role_key: str
     database_url: str
 
-    ollama_base_url: str = "http://localhost:11434"
-    ollama_embedding_model: str = "nomic-embed-text"
-    ollama_embedding_dimensions: int = 768
-
     gemini_api_key: str = ""
     gemini_chat_model: str = "gemini-3.5-flash"
     gemini_grounding_model: str = "gemini-3.1-flash-lite"
